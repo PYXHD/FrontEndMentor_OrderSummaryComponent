@@ -1,0 +1,44 @@
+@font-face {
+  font-family: RedHat;
+  src: url(../fonts/RedHatDisplay-VariableFont_wght.ttf);
+}
+/* use weights: 500 (medium), 700(bold), 900(black)*/
+$font: RedHat, sans-serif;
+
+$white1: rgb(255, 255, 255);
+$white2: rgb(245, 247, 255);
+$pale-blue: rgb(224, 232, 255);
+$bright-blue: rgb(56, 41, 224);
+$desatured-blue: rgb(114, 128, 167);
+$dark-blue: rgb(31, 47, 86);
+
+@mixin fontStyle($f-weight, $f-size, $f-color, $f-align) {
+  font-family: $font;
+  font-weight: $f-weight;
+  font-size: $f-size;
+  color: $f-color;
+  text-align: $f-align;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $pale-blue;
+
+  @media screen and (max-width: 1440px) {
+    background: top no-repeat url(../img/pattern-background-desktop.svg)
+      $pale-blue;
+  }
+
+  @media screen and (max-width: 375px) {
+    background: top no-repeat url(../img/pattern-background-mobile.svg)
+      $pale-blue;
+  }
+}

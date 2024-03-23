@@ -1,0 +1,99 @@
+main {
+  .card-container {
+    max-width: 425px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 0 0 40px;
+    overflow: hidden;
+    background: $white1;
+    border-radius: 20px;
+
+    @media screen and (max-width: 425px) {
+      max-width: none;
+      margin: 0 10px;
+    }
+
+    .img-container {
+      img {
+        width: 100%;
+      }
+    }
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 0 30px;
+
+      h1 {
+        @include fontStyle(900, 1.5rem, $dark-blue, center);
+      }
+      p {
+        @include fontStyle(500, 1rem, $desatured-blue, center);
+        padding: 0 20px;
+        line-height: 25px;
+      }
+
+      .annual-plan-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        background: $white2;
+        border-radius: 10px;
+        padding: 20px;
+
+        .infos {
+          margin-right: auto;
+          line-height: 25px;
+
+          h2 {
+            @include fontStyle(900, 1rem, $dark-blue, left);
+          }
+          span {
+            @include fontStyle(500, 1rem, $desatured-blue, left);
+          }
+        }
+        a {
+          @include fontStyle(700, 0.875rem, $bright-blue, left);
+          transition: opacity 0.2s ease;
+
+          &:hover {
+            text-decoration: none;
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+    .btn {
+      width: 100%;
+      background: $bright-blue;
+      border: none;
+      border-radius: 10px;
+      padding: 15px;
+      @include fontStyle(700, 0.875rem, $white1, center);
+      cursor: pointer;
+      box-shadow: 0 20px 15px $pale-blue;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    .btn-cancel {
+      @include fontStyle(700, 0.875rem, $desatured-blue, center);
+      text-decoration: none;
+      transition: 0.3s ease;
+
+      &:hover {
+        color: $dark-blue;
+      }
+    }
+  }
+}
